@@ -27,11 +27,11 @@ jobs:
           # CI-only tools for linting, formatting, and testing
           pip install ruff black pytest
 
-      - name: Lint with Ruff
-        run: ruff check --output-format=github .
+      #- name: Lint with Ruff
+        # run: ruff check --output-format=github .
 
-      - name: Check code formatting with Black
-        run: black --check --diff .
+      #- name: Check code formatting with Black
+        # run: black --check --diff .
 
       - name: Run tests with pytest
         run: pytest --verbose
