@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
 # Base schema (shared properties)
@@ -15,6 +15,5 @@ class TaskRead(TaskBase):
     id: int
     completed: bool
 
-    class Config:
-        orm_mode = True  # allows SQLAlchemy models to be returned directly
+    model_config = ConfigDict(from_attributes=True)  # allows SQLAlchemy models to be returned directly
 
